@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.melin.beans.User" id="user2" name="user3">
+        <description>描述Bean 詳細說明</description>
+    </bean>
+
+    <bean class="com.melin.beans.User" id="user" >
+
+        <property name="id"  value="100"/>
+        <property name="userName" value="Melin"/>
+        <property name="realName" value="TT"/>
+    </bean>
+    <alias name="user" alias="melinuser"/>
+</beans>
