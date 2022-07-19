@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="com.melin.beans.User" id="user2" name="user3">
+    <bean class="com.melin.beans.User" id="user2" name="user3 user4,user5;user6">
         <description>描述Bean 詳細說明</description>
     </bean>
 

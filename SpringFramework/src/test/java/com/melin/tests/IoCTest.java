@@ -29,5 +29,8 @@ public class IoCTest {
         System.out.println("取得BEN 用 Name");
         User bean = ioc.getBean("user3",User.class);
         System.out.println(bean);
+        System.out.println("取得BEN 用 Name");
+        User bean6 = ioc.getBean("user6",User.class);
+        System.out.println(bean6);
     }
 }
