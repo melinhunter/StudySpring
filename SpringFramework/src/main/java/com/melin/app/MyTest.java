@@ -25,7 +25,7 @@ public class MyTest {
 
         ApplicationContext ioc = new ClassPathXmlApplicationContext("melinSpring.xml", "service.xml");
         System.out.println("Spring 容器已加載");
-        IUserService service = ioc.getBean(IUserService.class);
+        //IuserService[] service = ioc.getBean(UserService.class);
 
         IUserService service1 = (IUserService)ioc.getBean("userService2");
         IUserService service2 = ioc.getBean("userService", IUserService.class);
