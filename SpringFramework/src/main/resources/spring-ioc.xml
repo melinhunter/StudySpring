@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean class="com.melin.beans.User" id="user2" name="user3 user4,user5;user6">
         <description>描述Bean 詳細說明</description>
     </bean>
 
+
+
+    <!--
+        by setter method dependency injection
+        mapping bean setName method
+    -->
     <bean class="com.melin.beans.User" id="user" >
 
         <property name="id"  value="100"/>
@@ -13,4 +20,70 @@
         <property name="realName" value="TT"/>
     </bean>
     <alias name="user" alias="melinuser"/>
+
+    <!-- by constructor DI
+    1. 依照NAME 對應建構子的參數
+    2. name 可以省略, 要注意依順序對應鍵構子的參數
+    3. 可以使用index 作定位
+    -->
+    <bean class="com.melin.beans.User" id="user7">
+        <constructor-arg name="id" value="101" type="java.lang.Integer"/>
+        <constructor-arg name="userName" value="Chao" type="java.lang.String"/>
+        <constructor-arg name="realName" type="java.lang.String" value="XX"/>
+    </bean>
+    <bean class="com.melin.beans.User" id="user8">
+        <constructor-arg value="101" type="java.lang.Integer"/>
+        <constructor-arg index="1" value="Chao" />
+        <constructor-arg index="2" value="XX"/>
+    </bean>
+    <bean class="com.melin.beans.Wife" id="Dilireba" p:age="20" p:name="迪麗熱巴"/>
+    <bean class="com.melin.beans.Wife" id="Yang" c:age="10" c:name="楊幕"/>
+    <!--
+    複雜資料類型的DI -->
+    <bean class="com.melin.beans.Wife" id="wife">
+        <property name="age" value="36"/>
+        <property name="name" value="Peggy"/>
+    </bean>
+    <bean class="com.melin.beans.Person" id="person">
+        <property name="name">
+            <null></null>
+        </property>
+        <property name="gender" value=""/>
+        <property name="hobbies">
+            <list>
+                <value>電動</value>
+                <value>追劇</value>
+            </list>
+        </property>
+        <property name="course">
+            <map>
+                <entry key="1" value="Java"></entry>
+                <entry key="2" value="DB"></entry>
+            </map>
+        </property>
+        <property name="wife" ref="wife"/>
+    </bean>
+    <bean class="com.melin.beans.Person" id="person2">
+        <property name="name">
+            <null></null>
+        </property>
+        <property name="gender" value=""/>
+        <property name="wife">
+            <bean id="wife" class="com.melin.beans.Wife">
+                <property name="name" value="Tupeiju"></property>
+                <property name="age" value="40"></property>
+            </bean>
+        </property>
+    </bean>
+
+    <!--
+
+    P命名空間 p:id=""
+    beans properties add xmlns:p
+    xmlns:p="http ://www.springframework.org/schema/p"
+    Idea ALT+Enter 會自動加上
+
+    -->
+    <bean class="com.melin.beans.Person" id="person3" p:name="MelinP:id" p:wife-ref="Dilireba"/>
+    <bean class="com.melin.beans.Person" id="person4" p:name="MelinC:id" p:wife-ref="Yang"/>
 </beans>

@@ -29,4 +29,10 @@ public class User {
     public User() {
         System.out.println("init User.");
     }
+
+    public User(Integer id, String userName, String realName) {
+        this.id = id;
+        this.userName = userName;
+        this.realName = realName;
+    }
 }

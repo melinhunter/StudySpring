@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <!---
+    <bean class="com.melin.beans.Wife" id="wife" depends-on="person"></bean>
+    <bean class="com.melin.beans.Person" id="person"></bean>
+
+
+
+    <bean class="com.melin.beans.Wife" id="wife" lazy-init="true">
+        <description>
+            lazy-init : 使用時才加載
+        </description>
+    </bean>
+    -->
+    <!--
+        scope default singleton
+
+    <bean class="com.melin.beans.Wife" id="wife2" scope="singleton"></bean>
+    <bean class="com.melin.beans.Wife" id="wife3" scope="prototype"></bean>-->
+    <bean class="com.melin.beans.PersonFactory" id="personFactory"/>
+    <!--使用靜能工廠方法實例化Bean
+    <bean class="com.melin.beans.Person" id="person" factory-method="createPersonFactory">
+    </bean>-->
+
+    <!--使用實例工廠方法實例化
+    <bean class="com.melin.beans.Person" id="person2" factory-bean="personFactory" factory-method="createPersonFactoryMethod">
+    </bean>-->
+
+    <!-- 自動注入
+    byType 根據類別自動匹配, 但沒有匹配到或是多個類型Bean 會報錯
+    byName 根據setMethodName 去取得bean
+    constructor 根據Constructor 參數名字去匹配, 若沒有匹配到, 則改用參數類型去匹配, 類型假如有多個, 會注入失敗, 但不會出錯
+        同時找到多個, 若1個(只能1個)有2個方法
+                                     1. 將主要設定為primary="true" 則會以此為優先,
+                                     2. 或將不要自動配置的Bean 設定 autowire-candidate="false"
+    若constructor 有多個參數, 則必須同時都有找到bean 才會生效
+    -->
+    <bean class="com.melin.beans.Person" id="person" autowire="byName"></bean>
+    <bean class="com.melin.beans.Wife" id="wife" p:age="20" p:name="迪麗熱巴" primary="true"></bean>
+
+   <bean class="com.melin.beans.Wife" id="wife2" p:age="20" p:name="迪麗熱媽" autowire-candidate="false"></bean>
+   <!--
+    <bean class="com.melin.beans.Wife" id="wife9" p:age="20" p:name="迪麗熱媽9"></bean>
+   -->
+    <bean class="com.melin.beans.Person" id="person2" autowire="constructor"></bean>
+
+
+    <!--生命周期回調(CALL BACK)-->
+    <bean class="com.melin.beans.Person" id="person3" init-method="initBean" destroy-method="destroyBean"></bean>
+
+    <!--電置第三方Bean -->
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
+        <property name="username" value="${mysql.username}"></property>
+        <property name="password" value="${mysql.password}"></property>
+        <property name="url" value="${mysql.url}"></property>
+        <property name="driverClassName" value="${mysql.driverClassName}"></property>
+    </bean>
+
+    <!-- load properties file -->
+    <context:property-placeholder location="db.properties"></context:property-placeholder>
+</beans>
