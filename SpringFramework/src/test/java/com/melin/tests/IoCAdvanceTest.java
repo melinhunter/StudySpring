@@ -104,12 +104,25 @@ public class IoCAdvanceTest {
 
     }
 
+    /**
+     * 第三方Bean
+     */
     @Test
     public void test09(){
         System.out.println("Spring 已加載");
         DruidDataSource ds = ioc.getBean("dataSource", DruidDataSource.class);
         System.out.println(ds);
         ioc.close();
+
+    }
+
+    /**
+     * SpEL
+     */
+    @Test
+    public void test10(){
+        Person person = ioc.getBean("personSpEL", Person.class);
+        System.out.println(person);
 
     }
 }

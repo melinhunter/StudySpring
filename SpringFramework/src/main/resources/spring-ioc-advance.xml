@@ -61,4 +61,21 @@
 
     <!-- load properties file -->
     <context:property-placeholder location="db.properties"></context:property-placeholder>
+
+    <!-- SpEL -->
+    <bean class="com.melin.beans.Person" id="personSpEL">
+        <!--運算表達式-->
+        <property name="id" value="#{1+3}"></property>
+        <!--使用外部Bean-->
+        <property name="wife" value="#{wife2}"></property>
+
+        <!-- 使用Bean 屬性 -->
+        <property name="name" value="#{wife2.name}"></property>
+
+        <!-- 使用Bean 方法 -->
+        <property name="gender" value="#{wife2.getName()}"></property>
+
+        <!-- 使用靜態方法-->
+        <property name="birthday" value="#{T(com.melin.beans.PersonFactory).getNowDate()}"></property>
+    </bean>
 </beans>
