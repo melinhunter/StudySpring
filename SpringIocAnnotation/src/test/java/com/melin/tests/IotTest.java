@@ -1,8 +1,10 @@
 package com.melin.tests;
 
 import com.melin.beans.User;
+import com.melin.controller.EmpController;
 import com.melin.controller.UserController;
 import com.melin.dao.UserDao;
+import com.melin.service.BasicService;
 import com.melin.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,12 +60,22 @@ public class IotTest {
         bean.getUser();
         //System.out.println(bean.getUser());
     }
-    @Test
-    public void testx3(){
-        AnnotationConfigApplicationContext aalc = new AnnotationConfigApplicationContext();
-        aalc.scan("com.melin");
-        User bean = aalc.getBean(User.class);
 
-        System.out.println(bean);
+    @Test
+    public void test6(){
+        BasicService bean = ioc.getBean("empServiceImpl", BasicService.class);
+        System.out.println(bean.getBean());
+        //System.out.println(bean.getUser());
+    }
+
+    @Test
+    public void test7(){
+        EmpController bean = ioc.getBean("empController", EmpController.class);
+        bean.getUser();
+        //System.out.println(bean.getUser());
+    }
+    @Test
+    public void test8(){
+        ioc.getBean(UserController.class).doUser2();
     }
 }

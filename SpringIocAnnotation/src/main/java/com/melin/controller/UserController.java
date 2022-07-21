@@ -20,12 +20,24 @@ public class UserController {
      *    解決方法 1.修改Bean 的名字
      *            2. o修改Bean 名字@XXX(value="XXX") value 可省略, 變成 @XXX("XXX");
      *            3. Bean 用註解@Qualifier
+     *            4. Bean 用註解設定為Primary, 但Qualifier 較優先
+     *
      */
     @Autowired
     @Qualifier("simpleUserServiceImpl")
     UserService userServiceImpl;
 
+    UserService userService2;
+    @Autowired
+    public void createUserService(@Qualifier("simpleUserServiceImpl")UserService userService){
+        this.userService2 =  userServiceImpl;
+    }
     public void getUser(){
         userServiceImpl.getUser();
+    }
+
+    public void doUser2() {
+        System.out.println("doUser2");
+        userService2.getUser();
     }
 }
