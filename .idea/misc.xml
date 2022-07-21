@@ -10,6 +10,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/Spring-Jar-Lab/pom.xml" />
+        <option value="$PROJECT_DIR$/springIocAnnotation/pom.xml" />
       </set>
     </option>
   </component>
