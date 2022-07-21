@@ -12,6 +12,7 @@
         <module>SpringFramework</module>
         <module>springIocAnnotation</module>
         <module>SpringIocAnnotation</module>
+        <module>spring_ioc_javaconfig</module>
 
     </modules>
 
