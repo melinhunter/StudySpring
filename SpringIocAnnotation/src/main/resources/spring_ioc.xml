@@ -23,10 +23,12 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
         <context:exclude-filter type="assignable" expression="com.melin.controller.UserController"></context:exclude-filter>
     </context:component-scan>-->
-
+    <!--
     <context:component-scan base-package="com.melin" use-default-filters="false">
         <context:include-filter type="assignable" expression="com.melin.controller.UserController"></context:include-filter>
-    </context:component-scan>
+    </context:component-scan>-->
     <context:component-scan base-package="com.melin">
     </context:component-scan>
+
+    <context:property-placeholder location="db.properties"></context:property-placeholder>
 </beans>

@@ -5,4 +5,5 @@ package com.melin.service;
  * @Since 2022/7/21
  */
 public interface UserService {
+    public void getUser();
 }

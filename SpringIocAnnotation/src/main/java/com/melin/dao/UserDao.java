@@ -5,4 +5,5 @@ package com.melin.dao;
  * @Since 2022/7/21
  */
 public interface UserDao {
+    public void getUser();
 }
