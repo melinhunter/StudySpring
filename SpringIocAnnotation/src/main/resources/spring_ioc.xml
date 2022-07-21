@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 <!--
     @Controller 標記在控制層的CLASS, 註冊為Bean
@@ -9,5 +10,23 @@
     @Repository 標記在數據層
     @Component 標記非三層的CLASS
 -->
+    <!--
     <bean class="com.melin.controller.UserController" id="controller"></bean>
+    -->
+
+    <!-- 設置掃描
+           排除掃瞄/包含掃瞄
+         自動將CLASSNAME 首字變為小寫作為 bean id
+
+
+    <context:component-scan base-package="com.melin">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
+        <context:exclude-filter type="assignable" expression="com.melin.controller.UserController"></context:exclude-filter>
+    </context:component-scan>-->
+
+    <context:component-scan base-package="com.melin" use-default-filters="false">
+        <context:include-filter type="assignable" expression="com.melin.controller.UserController"></context:include-filter>
+    </context:component-scan>
+    <context:component-scan base-package="com.melin">
+    </context:component-scan>
 </beans>
