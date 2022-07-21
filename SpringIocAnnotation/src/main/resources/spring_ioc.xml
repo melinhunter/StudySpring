@@ -2,5 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean class="com.melin.controller.UserController" id="controller"></bean>
+
+<!--
+    @Controller 標記在控制層的CLASS, 註冊為Bean
+    @Service 標記在 業務邏輯層
+    @Repository 標記在數據層
+    @Component 標記非三層的CLASS
+-->
+    <bean class="com.melin.controller.UserController" id="controller"></bean>
 </beans>
