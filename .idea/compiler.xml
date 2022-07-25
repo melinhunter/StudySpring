@@ -6,13 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringIocAnnotation" />
+        <module name="SpringMelinLab" />
+        <module name="spring_ioc_javaconfig" />
         <module name="SpringFramework" />
+        <module name="SpringIocAnnotation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Spring-Jar-Lab" target="1.8" />
       <module name="springIocAnnotation" target="1.8" />
+      <module name="springIocJavaconfig" target="1.8" />
+      <module name="SpringIocXml" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
