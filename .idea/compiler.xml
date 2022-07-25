@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SpringMelinLab" />
-        <module name="spring_ioc_javaconfig" />
         <module name="SpringFramework" />
         <module name="SpringIocAnnotation" />
+        <module name="SpringIocJavaconfig" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
