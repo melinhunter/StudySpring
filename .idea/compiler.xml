@@ -6,11 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
-=======
         <module name="SpringMelinLab" />
         <module name="SpringFramework" />
->>>>>>> c2f2281534739ec7f0f08f3debdfe5ab06aaeacd
         <module name="SpringIocAnnotation" />
         <module name="SpringIocJavaconfig" />
       </profile>
