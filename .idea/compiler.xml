@@ -7,11 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SpringIocAnnotation" />
-        <module name="SpringFramework" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Spring-Jar-Lab" target="1.8" />
+      <module name="SpringFramework" target="1.8" />
       <module name="springIocAnnotation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
