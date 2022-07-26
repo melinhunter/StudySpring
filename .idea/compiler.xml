@@ -8,17 +8,20 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringMelinLab" />
         <module name="SpringFramework" />
+        <module name="SpringIocXml" />
         <module name="SpringIocAnnotation" />
         <module name="SpringIocJavaconfig" />
-        <module name="SpringIocXml" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SpringMelinLab" target="1.8" />
+      <module name="MelinSpring" target="1.8" />
       <module name="SpringFramework" target="1.8" />
       <module name="springIocAnnotation" target="1.8" />
+      <module name="SpringIocAnnotation" target="1.8" />
+      <module name="SpringIocJavaconfig" target="1.8" />
       <module name="springIocJavaconfig" target="1.8" />
       <module name="SpringIocXml" target="1.8" />
+      <module name="SpringMelinLab" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
