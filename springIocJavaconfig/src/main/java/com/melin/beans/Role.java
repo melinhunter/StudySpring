@@ -24,4 +24,9 @@ public class Role {
     public Role(){
         System.out.println("Init Role !!");
     }
+
+    @Override
+    public String toString() {
+        return "Role{}";
+    }
 }

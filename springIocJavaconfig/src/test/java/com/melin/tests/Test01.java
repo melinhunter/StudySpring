@@ -2,6 +2,8 @@ package com.melin.tests;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.melin.IocJavaConfig;
+import com.melin.beans.Role;
+import com.melin.beans.User;
 import com.melin.controller.EmpController;
 import com.melin.controller.UserController;
 import org.junit.Before;
@@ -47,5 +49,22 @@ public class Test01 {
         DruidDataSource ds = ioc.getBean("dd",DruidDataSource.class);
         System.out.println(ds);
 
+    }
+
+    @Test
+    public void test04() {
+        //User bean = ioc.getBean("userSecondJavaConfig",User.class);
+        User bean;
+        bean = ioc.getBean("userdd1", User.class);
+        System.out.println(bean);
+        bean = ioc.getBean("userdd2", User.class);
+        System.out.println(bean);
+
+    }
+
+    @Test
+    public void test05(){
+        Role role = ioc.getBean("role",Role.class);
+        System.out.println(role);
     }
 }

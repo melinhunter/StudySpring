@@ -9,15 +9,13 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.melin.beans.Role;
 import com.melin.beans.User;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 
 //相檔於XML<bean></bean>
 @Configuration
 @ComponentScan(basePackages = "com.melin")
 @PropertySource("classpath:db.properties")
+@Import(SecondJavaConfig.class )
 public class IocJavaConfig {
     @Bean("dd")
     public DruidDataSource dataSource(){
@@ -43,4 +41,12 @@ public class IocJavaConfig {
     private String url;
     @Value("${mysql.driverClassName}")
     private String driverClassName;
+
+    @Bean
+    public Role role(User userdd1){
+        System.out.println(userdd1.getName());
+
+        return new Role();
+    }
+
 }
