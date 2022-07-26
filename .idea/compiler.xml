@@ -9,7 +9,9 @@
         <module name="SpringMelinLab" />
         <module name="springIocJavaconfig" />
         <module name="SpringIocXml" />
+        <module name="SpringFramework" />
         <module name="SpringIocAnnotation" />
+        <module name="SpringIocJavaconfig" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
