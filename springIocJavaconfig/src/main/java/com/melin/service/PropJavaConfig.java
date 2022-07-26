@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySources;
  * @Since 2022/7/25
  */
 @PropertySources({
-        @PropertySource("classpath:/myconfig.properties"),
+        @PropertySource(value = "classpath:/myconfig.properties", ignoreResourceNotFound = true),
         @PropertySource(value = "classpath:/myconfig-${spring.profiles.active}.properties", ignoreResourceNotFound = true),
 
 })
