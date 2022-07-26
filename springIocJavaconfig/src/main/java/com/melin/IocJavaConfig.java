@@ -14,8 +14,8 @@ import org.springframework.context.annotation.*;
 //相檔於XML<bean></bean>
 @Configuration
 @ComponentScan(basePackages = "com.melin")
-//@PropertySource("classpath:db.properties")
-//@Import(SecondJavaConfig.class )
+@PropertySource("classpath:db.properties")
+@Import(SecondJavaConfig.class )
 public class IocJavaConfig {
     @Bean("dd")
     public DruidDataSource dataSource(){
