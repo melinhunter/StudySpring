@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MelinSpring.iml" filepath="$PROJECT_DIR$/MelinSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIocAnnotation/SpringIocAnnotation.iml" filepath="$PROJECT_DIR$/SpringIocAnnotation/SpringIocAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIocXml/SpringIocXml.iml" filepath="$PROJECT_DIR$/SpringIocXml/SpringIocXml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMelinLab/SpringMelinLab.iml" filepath="$PROJECT_DIR$/SpringMelinLab/SpringMelinLab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springIocJavaconfig/springIocJavaconfig.iml" filepath="$PROJECT_DIR$/springIocJavaconfig/springIocJavaconfig.iml" />
+    </modules>
+  </component>
+</project>
